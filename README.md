@@ -1,10 +1,7 @@
-# Developing and Testing an Asynchronous API with FastAPI and Pytest
+# Developing Asynchronous API with FastAPI
 
-## Want to learn how to build this?
 
-Check out the [post](https://testdriven.io/blog/fastapi-crud).
-
-## Want to use this project?
+## This assignment is include 4-8
 
 Build the images and run the containers:
 
