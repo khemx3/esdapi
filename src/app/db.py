@@ -17,7 +17,7 @@ books = Table(
     Column("id", Integer, primary_key=True),
     Column("title", String(50)),
     Column("description", String(50)),
-    Column("price", Float),
+    Column("price", Integer),
     Column("created_date", DateTime, default=func.now(), nullable=False),
 )
 

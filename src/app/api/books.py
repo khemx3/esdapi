@@ -7,8 +7,8 @@ from fastapi import APIRouter, HTTPException, Path
 router = APIRouter()
 
 
-@router.post("/", response_model=NoteDB, status_code=201)
-async def create_note(payload: BookSchema):
+@router.post("/", response_model=BookDB, status_code=201)
+async def create_book(payload: BookSchema):
     note_id = await crud.post(payload)
 
     response_object = {
@@ -20,7 +20,7 @@ async def create_note(payload: BookSchema):
 
 
 @router.get("/{id}/", response_model=BookDB)
-async def read_note(id: int = Path(..., gt=0),):
+async def read_book(id: int = Path(..., gt=0),):
     note = await crud.get(id)
     if not note:
         raise HTTPException(status_code=404, detail="Note not found")
@@ -33,7 +33,7 @@ async def read_all_books():
 
 
 @router.put("/{id}/", response_model=BookDB)
-async def update_note(payload: BookSchema, id: int = Path(..., gt=0),):
+async def update_book(payload: BookSchema, id: int = Path(..., gt=0),):
     note = await crud.get(id)
     if not note:
         raise HTTPException(status_code=404, detail="Note not found")
@@ -49,7 +49,7 @@ async def update_note(payload: BookSchema, id: int = Path(..., gt=0),):
 
 
 @router.delete("/{id}/", response_model=BookDB)
-async def delete_note(id: int = Path(..., gt=0)):
+async def delete_book(id: int = Path(..., gt=0)):
     note = await crud.get(id)
     if not note:
         raise HTTPException(status_code=404, detail="Note not found")
