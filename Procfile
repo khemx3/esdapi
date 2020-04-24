@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+web: gunicorn esd-api.wsgi --log-file -
