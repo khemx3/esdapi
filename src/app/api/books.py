@@ -15,6 +15,7 @@ async def create_book(payload: BookSchema):
         "id": note_id,
         "title": payload.title,
         "description": payload.description,
+        "price": payload.price
     }
     return response_object
 
@@ -44,6 +45,7 @@ async def update_book(payload: BookSchema, id: int = Path(..., gt=0),):
         "id": note_id,
         "title": payload.title,
         "description": payload.description,
+        "price": payload.price
     }
     return response_object
 
